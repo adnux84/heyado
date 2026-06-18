@@ -101,7 +101,7 @@
   @media(max-width:880px){.nav-links{display:none}}
 
   /* HERO */
-  .hero{padding:78px 0 0}
+  .hero{padding-top:78px}
   .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
   .hero h1{margin-top:24px;max-width:13ch}
   .hero-sub{margin-top:28px;font-size:21px;line-height:1.45;color:var(--ink);max-width:40ch}
@@ -134,6 +134,39 @@
   .pill{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.04em;font-weight:500;color:var(--on-dark);background:var(--dark-2);border:1px solid var(--line-dark);border-radius:var(--pill);padding:8px 14px;transition:border-color .2s,transform .2s var(--ease)}
   .pill:hover{border-color:var(--accent);transform:translateY(-2px)}
   .card-foot{margin-top:26px;font-size:13.5px;color:var(--muted-dark);line-height:1.5}
+
+  /* METHOD VIZ — hero graphic (Vorher → Mechanismus → Jetzt) */
+  .method-viz{display:flex;flex-direction:column}
+  .method-viz .eyebrow{color:var(--muted-dark)}
+  .shift-diagram{margin-top:24px;display:flex;flex-direction:column;align-items:stretch}
+  .belief{border-radius:var(--r-sm);padding:18px 20px;border:1px solid var(--line-dark);background:var(--dark-2)}
+  .belief .b-head{display:flex;align-items:center;gap:9px}
+  .belief .b-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);font-weight:600}
+  .belief .ico{width:24px;height:24px;flex:0 0 24px;display:grid;place-items:center;border-radius:999px;color:var(--muted-dark);border:1px solid var(--line-dark)}
+  .belief .ico svg{width:13px;height:13px}
+  .belief .b-quote{margin-top:13px;font-family:"Manrope";font-weight:600;font-size:22px;line-height:1.18;color:var(--on-dark);letter-spacing:-.01em}
+  .belief.old .b-quote{color:var(--muted-dark)}
+  .belief.now{background:var(--olive);border-color:var(--olive-line);transition:box-shadow .9s var(--ease) .4s}
+  .belief.now .b-tag{color:var(--accent)}
+  .belief.now .ico{color:var(--accent);border-color:var(--accent);background:rgba(199,242,92,.10)}
+  .belief.now .b-quote b{color:var(--accent);font-weight:700}
+  .loaded .belief.now{box-shadow:0 0 0 1px var(--accent),0 18px 46px -20px var(--accent)}
+
+  .engine{position:relative;display:flex;flex-direction:column;align-items:center;padding:6px 0 2px}
+  .engine .wire{width:2px;height:16px;background:linear-gradient(var(--line-dark),var(--olive-line))}
+  .e-band{display:flex;align-items:center;gap:13px;flex-wrap:wrap;justify-content:center;border:1px dashed var(--line-dark);border-radius:var(--pill);padding:9px 16px;background:rgba(244,243,239,.02);margin:6px 0}
+  .e-label{display:inline-flex;align-items:center;gap:7px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);white-space:nowrap}
+  .e-label svg{width:13px;height:13px;color:var(--accent);animation:spin 7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .e-mechs{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+  .e-mechs .mech{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.02em;color:var(--on-dark);background:var(--dark-2);border:1px solid var(--line-dark);border-radius:var(--pill);padding:6px 12px;transition:border-color .2s,transform .2s var(--ease),opacity .5s var(--ease);opacity:0;transform:translateY(6px)}
+  .loaded .e-mechs .mech{opacity:1;transform:none}
+  .loaded .e-mechs .mech:nth-child(1){transition-delay:.45s}
+  .loaded .e-mechs .mech:nth-child(2){transition-delay:.55s}
+  .loaded .e-mechs .mech:nth-child(3){transition-delay:.65s}
+  .loaded .e-mechs .mech:nth-child(4){transition-delay:.75s}
+  .e-mechs .mech:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .engine .chev{color:var(--accent);font-size:13px;line-height:1;margin-top:4px}
 
   /* MARQUEE */
   .marquee{background:var(--ink);color:var(--on-dark);overflow:hidden;border:none;padding:18px 0;display:flex;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -366,34 +399,47 @@
       <span class="eyebrow" data-anim="1">§ 00 · Belief-first</span>
       <h1 data-anim="2">Marketing, das <span class="hl lit">Nachfrage</span> installiert</h1>
       <p class="hero-sub" data-anim="3">Hör auf zu verkaufen. Installiere den Grund, warum dein Markt es will.</p>
-      <p class="hero-body" data-anim="4">Wir finden den einen Glaubenssatz, den dein Markt braucht, bevor dein Angebot Sinn ergibt — und bauen die Assets, die ihn installieren: Verkaufsseite, E-Mail-Sequenz und Anzeigen.</p>
-      <div class="hero-actions" data-anim="5">
+      <div class="hero-actions" data-anim="4">
         <a href="#preise" class="btn btn-accent">Sichere dir einen von 5 Plätzen <span class="ico">→</span></a>
         <a href="#methode" class="btn btn-line">So funktioniert's</a>
       </div>
       <p class="hero-fine" data-anim="5"><span class="dotsm"></span> Belief-first. Gebaut, damit dein Angebot offensichtlich wirkt.</p>
     </div>
 
-    <aside class="card-dark">
+    <aside class="card-dark method-viz">
       <span class="eyebrow no-rule">Belief-Shift-Methode</span>
-      <h3>Eine klare Botschaft. Wiederholt, bis das Angebot klickt.</h3>
-      <div class="shift-row">
-        <div class="shift-box">
-          <div class="k">Dein Publikum denkt</div>
-          <div class="v">„Das hat Zeit."</div>
+      <div class="shift-diagram">
+        <div class="belief old">
+          <div class="b-head">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span class="b-tag">Vorher · dein Publikum denkt</span>
+          </div>
+          <div class="b-quote">„Das hat Zeit."</div>
         </div>
-        <div class="shift-box now">
-          <div class="k">Jetzt erkennt es</div>
-          <div class="v">Das <b>Warten</b> ist der Grund, warum das Problem teuer bleibt.</div>
+
+        <div class="engine">
+          <span class="wire"></span>
+          <div class="e-band">
+            <span class="e-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg> Mechanismus</span>
+            <div class="e-mechs">
+              <span class="mech">Beweis</span>
+              <span class="mech">Story</span>
+              <span class="mech">Einwand</span>
+              <span class="mech">Mythos</span>
+            </div>
+          </div>
+          <span class="chev">▼</span>
+        </div>
+
+        <div class="belief now">
+          <div class="b-head">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+            <span class="b-tag">Jetzt · es erkennt</span>
+          </div>
+          <div class="b-quote">Warten wird <b>teuer</b>.</div>
         </div>
       </div>
-      <div class="pills">
-        <span class="pill">Beweis</span>
-        <span class="pill">Einwand</span>
-        <span class="pill">Story</span>
-        <span class="pill">Mythos</span>
-      </div>
-      <p class="card-foot">Wir finden den einen Glaubenssatz, der deine Verkäufe blockiert, bauen die Assets darum herum — und geben dir ein System, das startklar ist.</p>
+      <p class="card-foot">Ein Glaubenssatz, installiert — bis dein Angebot die offensichtliche Wahl ist.</p>
     </aside>
   </div>
 </header>
